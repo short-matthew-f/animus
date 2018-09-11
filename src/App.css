@@ -1,0 +1,91 @@
+.App {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  height: 100vh;
+  width: 100vw;
+}
+
+.interface-container {
+  flex-basis: 200px;
+  padding: 25px;
+  background: skyblue;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.interface-container button:not(:last-child) {
+  margin-bottom: 25px;
+}
+
+.stateful-container {
+  background: black;
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.stateful {
+  width: 200px;
+  height: 200px;
+  border: 1px solid orange;
+
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.disco {
+  animation-name: disco;
+  animation-duration: .25s;
+}
+
+.pulsing {
+  animation-name: pulsing;
+  animation-direction: alternate-reverse;
+}
+
+.spinning {
+  animation-name: spinning;
+}
+
+@keyframes spinning {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg)
+  }
+}
+
+@keyframes pulsing {
+  from {
+    transform: scale(0.5);
+  }
+
+  to {
+    transform: scale(2);
+  }
+}
+
+@keyframes disco {
+  0% {
+    background: rgb(255, 0, 0);
+  }
+
+  33% {
+    background: rgb(0, 255, 0);
+  }
+
+  66% {
+    background: rgb(0, 0, 255);
+  }
+
+  100% {
+    background: rgb(255, 0, 0);
+  }
+}
